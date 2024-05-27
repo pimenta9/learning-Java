@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FirstScanner
@@ -8,16 +9,23 @@ public class FirstScanner
     }
     public static void main (String[] args)
     {
-        FirstScanner aux = new FirstScanner();
+        try
+        {
+            FirstScanner aux = new FirstScanner();
 
-        Scanner sc = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
 
-        System.out.println("First number: ");
-        int a = sc.nextInt();
+            System.out.println("First number: ");
+            int a = sc.nextInt();
 
-        System.out.println("Second number: ");
-        int b = sc.nextInt();
+            System.out.println("Second number: ");
+            int b = sc.nextInt();
 
-        System.out.println("Sum: " + aux.sum(a, b));
+            System.out.println("Sum: " + aux.sum(a, b));
+        }
+        catch (InputMismatchException e)
+        {
+            System.out.println("ERROR: Input Mismatch");
+        }
     }
 }
